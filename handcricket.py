@@ -19,10 +19,16 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
             print(f'computer choose {cval}')
             while list[pval-1]!=cval :
                 cscore+=cval
-                if cscore>pscore and pbat==1:
-                    print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
-                    print(f'computer won the match by {cscore-pscore} runs!!!!!!!')
-                    exit() 
+                if  pbat==1:
+                    if cscore>pscore:
+                        print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
+                        print(f'computer won the match by {cscore-pscore} runs!!!!!!!')
+                        exit() 
+                    elif pscore==cscore:
+                        print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
+                        print(f'it is a tie')
+                        exit()
+                        
                 else:
                     cval=random.choice(list)
                     pval=int(input('enter 1-6:'))
