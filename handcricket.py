@@ -55,7 +55,7 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
                 else:
                     cval=random.choice(list)
                     pval=int(input('enter 1-6:'))
-                    print(f'computer choose {cval}_')
+                    print(f'computer choose {cval}')
                 
             print(f'computer score:{cscore}, player score:{pscore}')
             
