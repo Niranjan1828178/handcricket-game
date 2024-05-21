@@ -12,7 +12,7 @@ pbat=0
 def game(cbool,pbool,cbat,pbat,cscore,pscore):
    
     if cbool==True and cbat==0:
-    
+            cbat=1
             print('______computer turn______')
             cval=random.choice(list)
             pval=int(input('enter 1-6:'))
@@ -34,24 +34,29 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
                 print(f'you took a wicket, now u need to beat computer score by {cscore}')
                 cbool=False
                 pbool=True
-                cbat=1
+                
                 game(cbool,pbool,cbat,pbat,cscore,pscore)
             
                 
        
         
     elif pbool==True and pbat==0 :
-  
+            pbat=1
             print('______player turn______')
             cval=random.choice(list)
             pval=int(input('enter 1-6:'))
-            print(f'computer choose {cval}_')
+            print(f'computer choose {cval}')
             while list[pval-1]!=cval:
                 pscore+=list[pval-1]
-                if pscore>cscore and cbat==1:
-                    print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
-                    print(f'you won the match by {pscore-cscore} runs!!!!!!!!')
-                    exit()
+                if  cbat==1:
+                    if pscore>cscore:
+                        print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
+                        print(f'you won the match by {pscore-cscore} runs!!!!!!!!')
+                        exit()
+                    elif pscore==cscore:
+                        print(f'____computer score:{cscore} ____\n ____player score:{pscore} ______')
+                        print(f'it is a tie')
+                        exit()
                 else:
                     cval=random.choice(list)
                     pval=int(input('enter 1-6:'))
@@ -61,7 +66,7 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
             
             if cbat==0:
                 print(f'computer took a wicket, now u need to take down the computer before {pscore}')
-                pbat=1
+                
                 cbool=True
                 pbool=False
                 game(cbool,pbool,cbat,pbat,cscore,pscore)
