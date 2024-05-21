@@ -111,9 +111,4 @@ else:
             computerbool=True
            
 game(computerbool,playerbool,cbat,pbat,cscore,pscore)
-        
-        
-
-
-
-    
+            
