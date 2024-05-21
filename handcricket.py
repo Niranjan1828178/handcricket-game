@@ -13,10 +13,10 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
    
     if cbool==True and cbat==0:
     
-            print('______computer turn_______')
+            print('______computer turn______')
             cval=random.choice(list)
             pval=int(input('enter 1-6:'))
-            print(f'_______computer choose {cval}________')
+            print(f'computer choose {cval}')
             while list[pval-1]!=cval :
                 cscore+=cval
                 if cscore>pscore and pbat==1:
@@ -26,12 +26,12 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
                 else:
                     cval=random.choice(list)
                     pval=int(input('enter 1-6:'))
-                    print(f'_______computer choose {cval}________')
+                    print(f'computer choose {cval}_')
                 
-            print(f'_____computer score:{cscore}, player score:{pscore}______')
+            print(f'computer score:{cscore}, player score:{pscore}')
                 
             if  pbat==0 :
-                print(f'_____you took a wicket, now u need to beat computer score by {cscore}______')
+                print(f'you took a wicket, now u need to beat computer score by {cscore}')
                 cbool=False
                 pbool=True
                 cbat=1
@@ -45,7 +45,7 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
             print('______player turn______')
             cval=random.choice(list)
             pval=int(input('enter 1-6:'))
-            print(f'_______computer choose {cval}________')
+            print(f'computer choose {cval}_')
             while list[pval-1]!=cval:
                 pscore+=list[pval-1]
                 if pscore>cscore and cbat==1:
@@ -55,12 +55,12 @@ def game(cbool,pbool,cbat,pbat,cscore,pscore):
                 else:
                     cval=random.choice(list)
                     pval=int(input('enter 1-6:'))
-                    print(f'_______computer choose {cval}________')
+                    print(f'computer choose {cval}_')
                 
-            print(f'____computer score:{cscore}, player score:{pscore} ______')
+            print(f'computer score:{cscore}, player score:{pscore}')
             
             if cbat==0:
-                print(f'____computer took a wicket, now u need to take down the computer before {pscore} _____')
+                print(f'computer took a wicket, now u need to take down the computer before {pscore}')
                 pbat=1
                 cbool=True
                 pbool=False
@@ -78,7 +78,7 @@ if (list[player-1]+computer)%2!=0 :
     if pchoice=='even':
         print('computer won the toss!!!!!!')
         computerchoice=random.choice(rolchoice)
-        print(f'____compuer choose {computerchoice}_____')
+        print(f'compuer choose {computerchoice}!')
         if(computerchoice=='batting'):
             computerbool=True
         else:
@@ -86,7 +86,7 @@ if (list[player-1]+computer)%2!=0 :
     else:
         print('you won the toss!!!!!!')
         uchoice= input('choose batting/bowling:')
-        print(f'____you choose {uchoice}____')
+        print(f'you choose {uchoice}!')
         if  uchoice=='batting':
             playerbool=True
         else:
@@ -96,7 +96,7 @@ else:
     if pchoice=='odd':
         print('computer won the toss!!')
         computerchoice=random.choice(rolchoice)
-        print(f'____compuer choose {computerchoice}_____')
+        print(f'compuer choose {computerchoice}!')
         if(computerchoice=='batting'):
             computerbool=True
         else:
@@ -104,7 +104,7 @@ else:
     else:
         print('you won the toss!!')
         uchoice= input('choose batting/bolling:')
-        print(f'you choose {uchoice}')
+        print(f'you choose {uchoice}!')
         if  uchoice=='batting':
             playerbool=True
         else:
